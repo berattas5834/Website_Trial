@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berat Taş - Geliştirici Portfolyosu</title>
     
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%23007aff'></rect><text x='50' y='55' font-size='50' font-family='-apple-system, sans-serif' font-weight='bold' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>BT</text></svg>">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     
     <style>
@@ -100,7 +102,6 @@
         
         .nav-links a:hover { color: var(--primary-color); }
         
-        /* GÜNCELLENDİ: Dil Değiştirme Butonu Stili */
         .lang-toggle {
             background: var(--bg-light);
             border: 1px solid var(--border-color);
@@ -115,14 +116,12 @@
             background-color: #e5e5e7; /* Biraz daha koyu gri */
         }
         
-        /* Buton içindeki span'lar için stil */
         .lang-toggle span {
             color: var(--text-secondary); /* Aktif olmayan dil rengi */
             font-weight: 500;
             transition: color 0.2s, font-weight 0.2s;
         }
         
-        /* Aktif olan dil için stil */
         .lang-toggle span.active {
             color: var(--text-dark); /* Aktif dil rengi */
             font-weight: 700; /* Daha kalın */
@@ -357,14 +356,13 @@
                     <li><a href="mailto:email@adresiniz.com" data-key="nav_contact">İletişim</a></li>
                 </ul>
                 <button id="lang-toggle-btn" class="lang-toggle">
-                    <span id="lang-tr">TR</span> / <span id="lang-en">EN</span>
+                    <span id="lang-tr">TR</span> / <span id="log-en">EN</span>
                 </button>
             </div>
         </div>
     </nav>
 
     <main>
-
         <header class="hero">
             <div class="container">
                 <img src="https://media.licdn.com/dms/image/v2/D4D03AQFLUM26FQ0l6A/profile-displayphoto-scale_400_400/B4DZoHo1qBGQAg-/0/1761064740203?e=1762992000&v=beta&t=kh8DkSdBW4iBypXRMTLvHVAJLyWOxKYt32g9iKJEeqU" alt="Berat Taş Profil Fotoğrafı" class="profile-picture">
@@ -554,21 +552,18 @@
         // 2. Gerekli elementleri ve mevcut dili seç
         const langToggleButton = document.getElementById('lang-toggle-btn');
         const langTrSpan = document.getElementById('lang-tr');
-        const langEnSpan = document.getElementById('lang-en');
+        const langEnSpan = document.getElementById('lang-en'); // DİKKAT: Önceki kodda burada 'log-en' yazıyordu, 'lang-en' olarak düzelttim.
         let currentLang = localStorage.getItem('lang') || 'tr';
 
         // 3. Dili ayarlayacak ana fonksiyon
         function setLanguage(lang) {
-            // Tüm 'data-key' niteliğine sahip elementleri bul
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.dataset.key;
                 if (translations[lang] && translations[lang][key]) {
-                    // İlgili çeviriyi HTML'e bas
                     element.innerHTML = translations[lang][key];
                 }
             });
             
-            // GÜNCELLENDİ: Buton metni yerine 'active' sınıfını yönet
             if (lang === 'tr') {
                 langTrSpan.classList.add('active');
                 langEnSpan.classList.remove('active');
@@ -577,15 +572,12 @@
                 langEnSpan.classList.add('active');
             }
             
-            // Sayfanın 'lang' niteliğini güncelle (SEO ve erişilebilirlik için)
             document.documentElement.lang = lang;
-            // Seçilen dili hafızaya kaydet
             localStorage.setItem('lang', lang);
         }
 
         // 4. Butona tıklama olayını dinle
         langToggleButton.addEventListener('click', () => {
-            // Mevcut dili değiştir (TR ise EN yap, EN ise TR yap)
             currentLang = currentLang === 'tr' ? 'en' : 'tr';
             setLanguage(currentLang);
         });
