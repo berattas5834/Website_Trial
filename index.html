@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berat Taş - Developer Portfolio</title>
+    <title>Berat Taş - Geliştirici Portfolyosu</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     
     <style>
         /* --- 1. Global Stiller ve Renk Paleti --- */
         :root {
-            --primary-color: #007aff; /* Daha canlı bir mavi */
+            --primary-color: #007aff;
             --primary-hover: #0056b3;
-            --bg-dark: #1c1c1e;       /* Koyu "Pro" arkaplan */
-            --bg-light: #f5f5f7;      /* Açık gri arkaplan */
+            --bg-dark: #1c1c1e;
+            --bg-light: #f5f5f7;
             --text-light: #ffffff;
             --text-dark: #1d1d1f;
-            --text-secondary: #86868b; /* İkincil metin rengi */
+            --text-secondary: #86868b;
             --border-color: #d2d2d7;
             --card-shadow: 0 4px 12px rgba(0,0,0,0.05);
             --card-shadow-hover: 0 8px 20px rgba(0,0,0,0.1);
@@ -29,7 +29,7 @@
         }
 
         html {
-            scroll-behavior: smooth; /* Sayfa içi linkler için yumuşak kaydırma */
+            scroll-behavior: smooth;
         }
 
         body {
@@ -42,7 +42,7 @@
         }
 
         .container {
-            max-width: 1024px; /* Biraz daha geniş bir alan */
+            max-width: 1024px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -54,30 +54,30 @@
         }
 
         h1 {
-            font-size: 3.5rem; /* 56px */
+            font-size: 3.5rem;
             letter-spacing: -0.02em;
-            margin-top: 1.5rem; /* Fotoğrafa üstten boşluk */
+            margin-top: 1.5rem;
         }
 
         h2 {
-            font-size: 2.5rem; /* 40px */
+            font-size: 2.5rem;
             text-align: center;
             margin-bottom: 3rem;
         }
         
-        h2.section-heading { /* Bölüm başlıkları için özel stil */
+        h2.section-heading {
             color: var(--text-dark);
             margin-bottom: 3rem;
         }
 
         h3 {
-            font-size: 1.5rem; /* 24px */
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
             color: var(--text-dark);
         }
 
         p {
-            font-size: 1.0625rem; /* 17px */
+            font-size: 1.0625rem;
             color: var(--text-secondary);
             margin-bottom: 1rem;
         }
@@ -95,7 +95,7 @@
 
         /* --- 3. Navigasyon Barı --- */
         .main-nav {
-            background: rgba(255, 255, 255, 0.85); /* Hafif opak beyaz */
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
@@ -120,6 +120,13 @@
             font-weight: 600;
             color: var(--text-dark);
         }
+        
+        /* Navigasyonun sağ tarafı (Linkler + Dil Butonu) için grup */
+        .nav-right-group {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
 
         .nav-links {
             list-style: none;
@@ -137,6 +144,24 @@
         .nav-links a:hover {
             color: var(--primary-color);
         }
+        
+        /* YENİ EKLENDİ: Dil Değiştirme Butonu Stili */
+        .lang-toggle {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 6px 14px;
+            border-radius: 99px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        
+        .lang-toggle:hover {
+            background: var(--text-dark);
+            color: var(--text-light);
+        }
 
         /* --- 4. Hero (Karşılama) Alanı --- */
         .hero {
@@ -152,22 +177,21 @@
         }
 
         .hero .subtitle {
-            font-size: 1.75rem; /* 28px */
+            font-size: 1.75rem;
             color: var(--text-secondary);
             font-weight: 500;
             margin: 1rem 0 2rem 0;
         }
         
-        /* Profil Fotoğrafı Stili */
         .profile-picture {
             width: 120px;
             height: 120px;
-            border-radius: 50%; /* Yuvarlak şekil */
-            object-fit: cover; /* Fotoğrafı kesmeden sığdırır */
-            margin: 0 auto 1.5rem auto; /* Ortala ve altından boşluk bırak */
-            display: block; /* Margin auto için gerekli */
-            border: 4px solid var(--primary-color); /* Vurgulu çerçeve */
-            box-shadow: 0 0 0 6px rgba(0, 122, 255, 0.3); /* Dış çerçeve efekti */
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem auto;
+            display: block;
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 0 0 6px rgba(0, 122, 255, 0.3);
             transition: transform 0.3s ease;
         }
 
@@ -175,7 +199,6 @@
             transform: scale(1.05);
         }
 
-        /* Profesyonel Buton Stili */
         .cta-button {
             display: inline-block;
             background-color: var(--primary-color);
@@ -183,7 +206,7 @@
             font-size: 1.0625rem;
             font-weight: 500;
             padding: 12px 24px;
-            border-radius: 99px; /* Tamamen yuvarlak kenar */
+            border-radius: 99px;
             text-decoration: none;
             transition: background-color 0.2s ease, transform 0.2s ease;
         }
@@ -191,7 +214,7 @@
         .cta-button:hover {
             background-color: var(--primary-hover);
             color: var(--text-light);
-            transform: translateY(-2px); /* Canlılık için hafif kalkma */
+            transform: translateY(-2px);
         }
         
         .cta-button.secondary {
@@ -219,7 +242,7 @@
         .project-card {
             background: #ffffff;
             border: 1px solid var(--border-color);
-            border-radius: 18px; /* Apple yuvarlaklığı */
+            border-radius: 18px;
             box-shadow: var(--card-shadow);
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -242,7 +265,7 @@
 
         .project-content {
             padding: 1.5rem;
-            flex-grow: 1; /* Kartların eşit yükseklikte olmasını sağlar */
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
@@ -250,10 +273,9 @@
         .project-content p {
             font-size: 1rem;
             margin-bottom: 1.5rem;
-            flex-grow: 1; /* Açıklamayı iter, linkleri alta sabitler */
+            flex-grow: 1;
         }
 
-        /* Teknoloji Etiketleri */
         .project-tags {
             display: flex;
             flex-wrap: wrap;
@@ -264,15 +286,15 @@
         .tag {
             background: var(--bg-light);
             color: var(--text-secondary);
-            font-size: 0.75rem; /* 12px */
+            font-size: 0.75rem;
             font-weight: 500;
             padding: 4px 10px;
             border-radius: 99px;
         }
 
-        /* --- 6. Yetenekler Bölümü (GÜNCELLENDİ) --- */
+        /* --- 6. Yetenekler Bölümü --- */
         .skills-section {
-            background-color: #ffffff; /* Açık arkaplan */
+            background-color: #ffffff;
             padding: 5rem 0;
             text-align: center;
         }
@@ -284,9 +306,9 @@
 
         .skills-grid {
             display: flex;
-            flex-wrap: wrap; /* Küçük ekranlarda alta geçmesini sağlar */
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 2.5rem; /* İkonlar arası boşluk */
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
@@ -295,7 +317,7 @@
             flex-direction: column;
             align-items: center;
             gap: 0.75rem;
-            width: 100px; /* Her bir ikon için sabit genişlik */
+            width: 100px;
             text-align: center;
             color: var(--text-secondary);
             font-size: 0.9rem;
@@ -303,15 +325,14 @@
             transition: color 0.2s ease;
         }
         
-        /* İkonların stilini <svg> yerine <i> olarak güncelledik */
         .skill-item i {
-            font-size: 60px; /* İkon boyutu */
-            color: var(--text-dark); /* İkon rengi */
+            font-size: 60px;
+            color: var(--text-dark);
             transition: color 0.2s ease, transform 0.2s ease;
         }
 
         .skill-item:hover i {
-            color: var(--primary-color); /* Hoverda ana renge dönüş */
+            color: var(--primary-color);
             transform: translateY(-5px);
         }
         
@@ -321,9 +342,9 @@
 
         /* --- 7. Hakkımda Bölümü --- */
         .about {
-            background: var(--bg-light); /* Arkaplan rengi */
+            background: var(--bg-light);
             padding: 5rem 0;
-            max-width: 760px; /* Okunabilirlik için dar */
+            max-width: 760px;
             margin: 0 auto;
             text-align: center;
         }
@@ -358,18 +379,18 @@
         .footer-links a {
             color: var(--text-secondary);
             transition: color 0.2s ease, transform 0.2s ease;
-            display: inline-block; /* İkonların düzgün görünmesi için */
+            display: inline-block;
         }
         
         .footer-links a:hover {
             color: var(--primary-color);
-            transform: scale(1.1); /* İkonlara canlılık katar */
+            transform: scale(1.1);
         }
         
         .footer-links svg {
             width: 24px;
             height: 24px;
-            fill: currentColor; /* 'color' özelliğini miras alır */
+            fill: currentColor;
         }
 
         .footer-content p {
@@ -384,12 +405,16 @@
     <nav class="main-nav">
         <div class="nav-container">
             <a href="#" class="nav-brand">Berat Taş</a>
-            <ul class="nav-links">
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="mailto:email@adresiniz.com">Contact</a></li>
-            </ul>
+            
+            <div class="nav-right-group">
+                <ul class="nav-links">
+                    <li><a href="#projects" data-key="nav_projects">Projeler</a></li>
+                    <li><a href="#skills" data-key="nav_skills">Yetenekler</a></li>
+                    <li><a href="#about" data-key="nav_about">Hakkımda</a></li>
+                    <li><a href="mailto:email@adresiniz.com" data-key="nav_contact">İletişim</a></li>
+                </ul>
+                <button id="lang-toggle-btn" class="lang-toggle">EN</button>
+            </div>
         </div>
     </nav>
 
@@ -398,63 +423,67 @@
         <header class="hero">
             <div class="container">
                 <img src="https://media.licdn.com/dms/image/v2/D4D03AQFLUM26FQ0l6A/profile-displayphoto-scale_400_400/B4DZoHo1qBGQAg-/0/1761064740203?e=1762992000&v=beta&t=kh8DkSdBW4iBypXRMTLvHVAJLyWOxKYt32g9iKJEeqU" alt="Berat Taş Profil Fotoğrafı" class="profile-picture">
-                <h1>Merhaba, ben Berat.</h1>
-                <p class="subtitle">Unity, Blender ve Python ile sürükleyici deneyimler<br>ve akıllı çözümler geliştiren bir yazılımcıyım.</p>
-                <a href="#projects" class="cta-button">Projelerimi Gör</a>
-                <a href="mailto:email@adresiniz.com" class="cta-button secondary">Bana Ulaşın</a>
+                <h1 data-key="hero_greeting">Merhaba, ben Berat.</h1>
+                <p class="subtitle" data-key="hero_subtitle">Unity, Blender ve Python ile sürükleyici deneyimler<br>ve akıllı çözümler geliştiren bir yazılımcıyım.</p>
+                <a href="#projects" class="cta-button" data-key="hero_cta_main">Projelerimi Gör</a>
+                <a href="mailto:email@adresiniz.com" class="cta-button secondary" data-key="hero_cta_secondary">Bana Ulaşın</a>
             </div>
         </header>
 
         <section id="projects" class="projects">
             <div class="container">
-                <h2 class="section-heading">Featured Projects</h2>
+                <h2 class="section-heading" data-key="projects_title">Öne Çıkan Projeler</h2>
                 <div class="project-grid">
+                    
                     <div class="project-card">
                         <img src="https://via.placeholder.com/800x450/1c1c1e/ffffff?text=Steam+Oyun+Görseli" alt="Proje 1 Ekran Görüntüsü">
                         <div class="project-content">
-                            <h3>[Steam Oyun Adı]</h3>
+                            <h3 data-key="project1_title">[Steam Oyun Adı]</h3>
                             <div class="project-tags">
                                 <span class="tag">Unity</span>
                                 <span class="tag">3D Modelleme</span>
                                 <span class="tag">Shader</span>
                             </div>
-                            <p>Steam'de yayınlanmak üzere geliştirilen, [oyunun kısa açıklaması].</p>
-                            <a href="#">Steam'de İncele &rarr;</a>
+                            <p data-key="project1_desc">Steam'de yayınlanmak üzere geliştirilen, [oyunun kısa açıklaması].</p>
+                            <a href="#" data-key="project1_link">Steam'de İncele &rarr;</a>
                         </div>
                     </div>
+                    
                     <div class="project-card">
                         <img src="https://via.placeholder.com/800x450/1c1c1e/ffffff?text=VR+Proje+Görseli" alt="Proje 2 Ekran Görüntüsü">
                         <div class="project-content">
-                            <h3>[VR Proje Adı]</h3>
+                            <h3 data-key="project2_title">[VR Proje Adı]</h3>
                              <div class="project-tags">
                                 <span class="tag">Unity</span>
                                 <span class="tag">VR</span>
                                 <span class="tag">Blender</span>
                             </div>
-                            <p>Tamamen sürükleyici bir sanal gerçeklik deneyimi. [Projenin amacı veya özelliği].</p>
-                            <a href="#">GitHub'da Gör &rarr;</a>
+                            <p data-key="project2_desc">Tamamen sürükleyici bir sanal gerçeklik deneyimi. [Projenin amacı veya özelliği].</p>
+                            <a href="#" data-key="project2_link">GitHub'da Gör &rarr;</a>
                         </div>
                     </div>
+                    
                     <div class="project-card">
                         <img src="https://via.placeholder.com/800x450/1c1c1e/ffffff?text=Data+Science+Görseli" alt="Proje 3 Ekran Görüntüsü">
                         <div class="project-content">
-                            <h3>Veri Madenciliği Analizi</h3>
+                            <h3 data-key="project3_title">Veri Madenciliği Analizi</h3>
                              <div class="project-tags">
                                 <span class="tag">Python</span>
                                 <span class="tag">Scikit-learn</span>
                                 <span class="tag">Numpy</span>
                             </div>
-                            <p>Dengesiz (imbalanced) bir veri seti üzerinde sınıflandırma ve analiz.</p>
-                            <a href="#">Raporu Oku &rarr;</a>
+                            <p data-key="project3_desc">Dengesiz (imbalanced) bir veri seti üzerinde sınıflandırma ve analiz.</p>
+                            <a href="#" data-key="project3_link">Raporu Oku &rarr;</a>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </section>
 
         <section id="skills" class="skills-section">
             <div class="container">
-                <h2 class="section-heading">Yeteneklerim</h2>
+                <h2 class="section-heading" data-key="skills_title">Yeteneklerim</h2>
                 <div class="skills-grid">
                     
                     <div class="skill-item">
@@ -481,17 +510,22 @@
                         <i class="devicon-firebase-plain"></i>
                         <span>Firebase</span>
                     </div>
+                    
+                    <div class="skill-item">
+                        <i class="devicon-python-original"></i>
+                        <span>Python</span>
+                    </div>
 
                 </div>
             </div>
         </section>
         
         <section id="about" class="about container">
-            <h2>Hakkımda</h2>
-            <p class="lead">
+            <h2 data-key="about_title">Hakkımda</h2>
+            <p class="lead" data-key="about_lead">
                 Oyun geliştirmeden veri bilimine uzanan geniş bir yelpazede yenilikçi projeler üretmeyi seviyorum.
             </p>
-            <p>
+            <p data-key="about_p">
                 Unity ve Blender kullanarak 3D modeller, karakterler (ışık ampulü kötü adam gibi!) ve özel shader'lar oluşturmaktan keyif alıyorum. Aynı zamanda Python'un gücünü kullanarak veri analizi yapıyor ve makine öğrenmesi modelleri geliştiriyorum. Hem mobil marketlerde hem de Steam gibi platformlarda oyun yayınlama tecrübem bulunuyor.
             </p>
         </section>
@@ -508,14 +542,104 @@
                 </li>
                 <li>
                     <a href="https://github.com/kullanici-adiniz" target="_blank" title="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.034c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.109-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.034c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.109-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.h372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     </a>
                 </li>
             </ul>
-            <p>&copy; 2025 Berat Taş. Tüm hakları saklıdır.</p>
+            <p data-key="footer_copyright">&copy; 2025 Berat Taş. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 
+
+    <script>
+        // 1. Tüm çevirileri burada sakla
+        const translations = {
+            'tr': {
+                nav_projects: "Projeler",
+                nav_skills: "Yetenekler",
+                nav_about: "Hakkımda",
+                nav_contact: "İletişim",
+                hero_greeting: "Merhaba, ben Berat.",
+                hero_subtitle: "Unity, Blender ve Python ile sürükleyici deneyimler<br>ve akıllı çözümler geliştiren bir yazılımcıyım.",
+                hero_cta_main: "Projelerimi Gör",
+                hero_cta_secondary: "Bana Ulaşın",
+                projects_title: "Öne Çıkan Projeler",
+                project1_title: "[Steam Oyun Adı]",
+                project1_desc: "Steam'de yayınlanmak üzere geliştirilen, [oyunun kısa açıklaması].",
+                project1_link: "Steam'de İncele &rarr;",
+                project2_title: "[VR Proje Adı]",
+                project2_desc: "Tamamen sürükleyici bir sanal gerçeklik deneyimi. [Projenin amacı veya özelliği].",
+                project2_link: "GitHub'da Gör &rarr;",
+                project3_title: "Veri Madenciliği Analizi",
+                project3_desc: "Dengesiz (imbalanced) bir veri seti üzerinde sınıflandırma ve analiz.",
+                project3_link: "Raporu Oku &rarr;",
+                skills_title: "Yeteneklerim",
+                about_title: "Hakkımda",
+                about_lead: "Oyun geliştirmeden veri bilimine uzanan geniş bir yelpazede yenilikçi projeler üretmeyi seviyorum.",
+                about_p: "Unity ve Blender kullanarak 3D modeller, karakterler (ışık ampulü kötü adam gibi!) ve özel shader'lar oluşturmaktan keyif alıyorum. Aynı zamanda Python'un gücünü kullanarak veri analizi yapıyor ve makine öğrenmesi modelleri geliştiriyorum. Hem mobil marketlerde hem de Steam gibi platformlarda oyun yayınlama tecrübem bulunuyor.",
+                footer_copyright: "&copy; 2025 Berat Taş. Tüm hakları saklıdır."
+            },
+            'en': {
+                nav_projects: "Projects",
+                nav_skills: "Skills",
+                nav_about: "About",
+                nav_contact: "Contact",
+                hero_greeting: "Hello, I'm Berat.",
+                hero_subtitle: "I'm a developer creating immersive experiences<br>and smart solutions with Unity, Blender, and Python.",
+                hero_cta_main: "See My Work",
+                hero_cta_secondary: "Contact Me",
+                projects_title: "Featured Projects",
+                project1_title: "[Steam Game Name]",
+                project1_desc: "A [short game description] developed for publication on Steam.",
+                project1_link: "View on Steam &rarr;",
+                project2_title: "[VR Project Name]",
+                project2_desc: "A fully immersive virtual reality experience. [Project's purpose or feature].",
+                project2_link: "View on GitHub &rarr;",
+                project3_title: "Data Mining Analysis",
+                project3_desc: "Classification and analysis on an imbalanced dataset.",
+                project3_link: "Read Report &rarr;",
+                skills_title: "My Skills",
+                about_title: "About Me",
+                about_lead: "I love building innovative projects, ranging from game development to data science.",
+                about_p: "I enjoy creating 3D models, characters (like the light bulb villain!), and custom shaders using Unity and Blender. I also leverage the power of Python for data analysis and developing machine learning models. I have experience publishing games on both mobile markets and platforms like Steam.",
+                footer_copyright: "&copy; 2025 Berat Taş. All rights reserved."
+            }
+        };
+
+        // 2. Gerekli elementleri ve mevcut dili seç
+        const langToggleButton = document.getElementById('lang-toggle-btn');
+        // Tarayıcı hafızasından kayıtlı dili al, yoksa 'tr' (Türkçe) olarak başlat
+        let currentLang = localStorage.getItem('lang') || 'tr';
+
+        // 3. Dili ayarlayacak ana fonksiyon
+        function setLanguage(lang) {
+            // Tüm 'data-key' niteliğine sahip elementleri bul
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.dataset.key;
+                if (translations[lang] && translations[lang][key]) {
+                    // İlgili çeviriyi HTML'e bas
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+            
+            // Butonun metnini güncelle (Eğer dil TR ise EN butonunu, EN ise TR butonunu göster)
+            langToggleButton.textContent = lang === 'tr' ? 'EN' : 'TR';
+            // Sayfanın 'lang' niteliğini güncelle (SEO ve erişilebilirlik için)
+            document.documentElement.lang = lang;
+            // Seçilen dili hafızaya kaydet
+            localStorage.setItem('lang', lang);
+        }
+
+        // 4. Butona tıklama olayını dinle
+        langToggleButton.addEventListener('click', () => {
+            // Mevcut dili değiştir (TR ise EN yap, EN ise TR yap)
+            currentLang = currentLang === 'tr' ? 'en' : 'tr';
+            setLanguage(currentLang);
+        });
+
+        // 5. Sayfa ilk yüklendiğinde dili ayarla
+        setLanguage(currentLang);
+    </script>
+
 </body>
 </html>
-
