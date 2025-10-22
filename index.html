@@ -53,6 +53,7 @@
         h1 {
             font-size: 3.5rem; /* 56px */
             letter-spacing: -0.02em;
+            margin-top: 1.5rem; /* Fotoğrafa üstten boşluk */
         }
 
         h2 {
@@ -149,6 +150,23 @@
             margin: 1rem 0 2rem 0;
         }
         
+        /* Profil Fotoğrafı Stili */
+        .profile-picture {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /* Yuvarlak şekil */
+            object-fit: cover; /* Fotoğrafı kesmeden sığdırır */
+            margin: 0 auto 1.5rem auto; /* Ortala ve altından boşluk bırak */
+            display: block; /* Margin auto için gerekli */
+            border: 4px solid var(--primary-color); /* Vurgulu çerçeve */
+            box-shadow: 0 0 0 6px rgba(0, 122, 255, 0.3); /* Dış çerçeve efekti */
+            transition: transform 0.3s ease;
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.05);
+        }
+
         /* Profesyonel Buton Stili */
         .cta-button {
             display: inline-block;
@@ -321,6 +339,7 @@
 
         <header class="hero">
             <div class="container">
+                <img src="img/profile.jpg" alt="Berat Taş Profil Fotoğrafı" class="profile-picture">
                 <h1>Merhaba, ben Berat.</h1>
                 <p class="subtitle">Unity, Blender ve Python ile sürükleyici deneyimler<br>ve akıllı çözümler geliştiren bir yazılımcıyım.</p>
                 <a href="#projects" class="cta-button">Projelerimi Gör</a>
