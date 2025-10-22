@@ -1,16 +1,12 @@
-Elbette, "Bunch 3D" kartına Google Play Store linkini de ekledim.
+Tamamdır, üçüncü ve son proje kartını da "Arise to The Sky" için App Store bilgilerine göre güncelledim.
 
-Bunu düzgün göstermek için:
+Proje kartını ve JavaScript `translations` objesini oyunun açıklaması, linki ve etiketleri ile doldurdum. Bu proje için bir görsel sağlamadığın için "Arise to The Sky" yazan bir yer tutucu görsel ekledim.
 
-1.  Proje kartlarının link alanı için `.project-links` adında yeni bir CSS stili ekledim. Bu, birden fazla linkin düzgün görünmesini sağlar.
-2.  "Proje Kartı 1"in (Bunch 3D) HTML'ini bu yeni yapıyı kullanacak şekilde güncelledim.
-3.  JavaScript `translations` objesine yeni Google Play linkinin metinlerini (TR ve EN) ekledim.
-
-İşte sitenin en güncel `index.html` hali:
+İşte sitenin en güncel ve tamamlanmış `index.html` hali:
 
 -----
 
-## Berat Taş - Portfolyo HTML (Çift Link Eklendi)
+## Berat Taş - Portfolyo HTML (Proje 3 Güncellendi)
 
 ```html
 <!DOCTYPE html>
@@ -264,7 +260,6 @@ Bunu düzgün göstermek için:
             border-radius: 99px;
         }
         
-        /* YENİ EKLENDİ: Proje Linkleri Wrapper */
         .project-links {
             display: flex;
             flex-wrap: wrap;
@@ -435,17 +430,17 @@ Bunu düzgün göstermek için:
                     </div>
                     
                     <div class="project-card">
-                        <img src="https://via.placeholder.com/800x450/1c1c1e/ffffff?text=Data+Science+Görseli" alt="Proje 3 Ekran Görüntüsü">
+                        <img src="https://via.placeholder.com/800x450/1c1c1e/ffffff?text=Arise+to+The+Sky" alt="Arise to The Sky Ekran Görüntüsü">
                         <div class="project-content">
-                            <h3 data-key="project3_title">Veri Madenciliği Analizi</h3>
+                            <h3 data-key="project3_title">Arise to The Sky</h3>
                              <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">Scikit-learn</span>
-                                <span class="tag">Numpy</span>
+                                <span class="tag">Unity</span>
+                                <span class="tag">iOS</span>
+                                <span class="tag">Hyper Casual</span>
                             </div>
-                            <p data-key="project3_desc">Dengesiz (imbalanced) bir veri seti üzerinde sınıflandırma ve analiz.</p>
+                            <p data-key="project3_desc">Basit ama bağımlılık yaratan oynanışa sahip, hızlı ve eğlenceli bir mobil oyun. Engelleri aşın, puanları toplayın ve zirveye yükselin.</p>
                             <div class="project-links">
-                                <a href="#" data-key="project3_link">Raporu Oku &rarr;</a>
+                                <a href="https://apps.apple.com/us/app/arise-to-the-sky/id1672673470" target="_blank" data-key="project3_link">App Store'da İncele &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -544,9 +539,9 @@ Bunu düzgün göstermek için:
                 project2_title: "Throw Master",
                 project2_desc: "Becerilerinizi test eden, bağımlılık yapıcı bir VR arcade oyunu. Çeşitli nesneleri fırlatın, hedefleri vurun ve en yüksek skora ulaşın.",
                 project2_link: "Meta Store'da İncele &rarr;",
-                project3_title: "Veri Madenciliği Analizi",
-                project3_desc: "Dengesiz (imbalanced) bir veri seti üzerinde sınıflandırma ve analiz.",
-                project3_link: "Raporu Oku &rarr;",
+                project3_title: "Arise to The Sky",
+                project3_desc: "Basit ama bağımlılık yaratan oynanışa sahip, hızlı ve eğlenceli bir mobil oyun. Engelleri aşın, puanları toplayın ve zirveye yükselin.",
+                project3_link: "App Store'da İncele &rarr;",
                 skills_title: "Yeteneklerim",
                 about_title: "Hakkımda",
                 about_lead: "Oyun geliştirmeden veri bilimine uzanan geniş bir yelpazede yenilikçi projeler üretmeyi seviyorum.",
@@ -570,9 +565,9 @@ Bunu düzgün göstermek için:
                 project2_title: "Throw Master",
                 project2_desc: "An addictive VR arcade game that tests your skills. Throw various objects, hit targets, and achieve the highest score.",
                 project2_link: "View on Meta Store &rarr;",
-                project3_title: "Data Mining Analysis",
-                project3_desc: "Classification and analysis on an imbalanced dataset.",
-                project3_link: "Read Report &rarr;",
+                project3_title: "Arise to The Sky",
+                project3_desc: "A quick and fun hyper-casual mobile game with simple yet addictive gameplay. Navigate obstacles, collect points, and rise to the top.",
+                project3_link: "View on App Store &rarr;",
                 skills_title: "My Skills",
                 about_title: "About Me",
                 about_lead: "I love building innovative projects, ranging from game development to data science.",
