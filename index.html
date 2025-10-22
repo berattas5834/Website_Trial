@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Your Name] - Portfolio</title>
+    <title>[Adınız Soyadınız] - Geliştirici Portfolyosu</title>
     <style>
-        /* --- 1. Global Styles & Typography (Apple Look) --- */
+        /* --- 1. Global Stiller ve Renk Paleti --- */
         :root {
-            --apple-black: #1d1d1f;
-            --apple-gray: #6e6e73;
-            --apple-light-gray: #f5f5f7;
-            --apple-blue: #0071e3;
+            --primary-color: #007aff; /* Daha canlı bir mavi */
+            --primary-hover: #0056b3;
+            --bg-dark: #1c1c1e;       /* Koyu "Pro" arkaplan */
+            --bg-light: #f5f5f7;      /* Açık gri arkaplan */
+            --text-light: #ffffff;
+            --text-dark: #1d1d1f;
+            --text-secondary: #86868b; /* İkincil metin rengi */
             --border-color: #d2d2d7;
-            --section-padding: 5rem 0;
+            --card-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            --card-shadow-hover: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         * {
@@ -21,84 +25,91 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth; /* Sayfa içi linkler için yumuşak kaydırma */
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: #ffffff;
-            color: var(--apple-black);
+            color: var(--text-dark);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
-            max-width: 980px; /* Classic Apple container width */
+            max-width: 1024px; /* Biraz daha geniş bir alan */
             margin: 0 auto;
-            padding: 0 22px;
+            padding: 0 20px;
         }
 
+        /* --- 2. Tipografi --- */
         h1, h2, h3, h4 {
             font-weight: 600;
             line-height: 1.2;
-            letter-spacing: -0.01em;
         }
 
         h1 {
             font-size: 3.5rem; /* 56px */
-            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
         }
 
         h2 {
             font-size: 2.5rem; /* 40px */
-            margin-bottom: 1.5rem;
             text-align: center;
+            margin-bottom: 3rem;
         }
 
         h3 {
             font-size: 1.5rem; /* 24px */
             margin-bottom: 0.5rem;
+            color: var(--text-dark);
         }
 
         p {
             font-size: 1.0625rem; /* 17px */
-            color: var(--apple-gray);
+            color: var(--text-secondary);
             margin-bottom: 1rem;
         }
 
         a {
-            color: var(--apple-blue);
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: var(--primary-hover);
             text-decoration: none;
         }
 
-            a:hover {
-                text-decoration: underline;
-            }
-
-        /* --- 2. Navigation Bar --- */
+        /* --- 3. Navigasyon Barı --- */
         .main-nav {
-            /* Glassmorphism effect */
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.85); /* Hafif opak beyaz */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
+            width: 100%;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 980px;
+            max-width: 1024px;
             margin: 0 auto;
-            padding: 0 22px;
+            padding: 0 20px;
         }
 
         .nav-brand {
             font-size: 1.25rem;
             font-weight: 600;
-            color: var(--apple-black);
+            color: var(--text-dark);
         }
 
         .nav-links {
@@ -107,153 +118,263 @@
             gap: 2rem;
         }
 
-            .nav-links a {
-                font-size: 0.9rem; /* 14px */
-                font-weight: 500;
-                color: var(--apple-black);
-            }
-
-        /* --- 3. Hero Section --- */
-        .hero {
-            text-align: center;
-            padding: var(--section-padding);
+        .nav-links a {
+            font-size: 0.9rem; /* 14px */
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.2s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
         }
 
-            .hero .subtitle {
-                font-size: 1.75rem; /* 28px */
-                color: var(--apple-gray);
-                font-weight: 500;
-            }
+        /* --- 4. Hero (Karşılama) Alanı --- */
+        .hero {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 7rem 0;
+            border-bottom: 1px solid #333;
+        }
 
-        /* --- 4. Projects Section --- */
+        .hero h1 {
+            color: var(--text-light);
+        }
+
+        .hero .subtitle {
+            font-size: 1.75rem; /* 28px */
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin: 1rem 0 2rem 0;
+        }
+        
+        /* Profesyonel Buton Stili */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            font-size: 1.0625rem;
+            font-weight: 500;
+            padding: 12px 24px;
+            border-radius: 99px; /* Tamamen yuvarlak kenar */
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--primary-hover);
+            color: var(--text-light);
+            transform: translateY(-2px); /* Canlılık için hafif kalkma */
+        }
+        
+        .cta-button.secondary {
+            background: rgba(255,255,255, 0.1);
+            color: var(--text-light);
+            margin-left: 1rem;
+        }
+        
+        .cta-button.secondary:hover {
+             background: rgba(255,255,255, 0.2);
+        }
+
+        /* --- 5. Projeler Bölümü --- */
         .projects {
-            background-color: var(--apple-light-gray);
-            padding: var(--section-padding);
+            background-color: var(--bg-light);
+            padding: 5rem 0;
         }
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
         .project-card {
             background: #ffffff;
-            border-radius: 18px; /* Apple's rounded corners */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 18px; /* Apple yuvarlaklığı */
+            box-shadow: var(--card-shadow);
             overflow: hidden;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
-            .project-card:hover {
-                transform: translateY(-5px);
-            }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
 
-            .project-card img {
-                width: 100%;
-                height: 220px;
-                object-fit: cover;
-                display: block;
-            }
+        .project-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid var(--border-color);
+        }
 
         .project-content {
             padding: 1.5rem;
+            flex-grow: 1; /* Kartların eşit yükseklikte olmasını sağlar */
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-content p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1; /* Açıklamayı iter, linkleri alta sabitler */
         }
 
-            .project-content h3 {
-                color: var(--apple-black);
-            }
+        /* Teknoloji Etiketleri */
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tag {
+            background: var(--bg-light);
+            color: var(--text-secondary);
+            font-size: 0.75rem; /* 12px */
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 99px;
+        }
 
-            .project-content p {
-                font-size: 1rem;
-                margin-bottom: 1rem;
-            }
-
-        /* --- 5. About Section --- */
+        /* --- 6. Hakkımda Bölümü --- */
         .about {
-            padding: var(--section-padding);
-            max-width: 760px; /* Narrower for reading */
+            background: #ffffff;
+            padding: 5rem 0;
+            max-width: 760px; /* Okunabilirlik için dar */
             margin: 0 auto;
             text-align: center;
         }
-
-        /* --- 6. Footer --- */
-        footer {
-            padding: 3rem 0;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            background: var(--apple-light-gray);
+        
+        .about h2 {
+            margin-bottom: 1.5rem;
         }
 
-        .footer-content {
-            color: var(--apple-gray);
-            font-size: 0.9rem;
+        .about p.lead {
+            color: var(--text-dark);
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- 7. Footer --- */
+        footer {
+            padding: 4rem 0;
+            text-align: center;
+            background: var(--bg-light);
+            border-top: 1px solid var(--border-color);
         }
 
         .footer-links {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            transition: color 0.2s ease, transform 0.2s ease;
+            display: inline-block; /* İkonların düzgün görünmesi için */
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+            transform: scale(1.1); /* İkonlara canlılık katar */
+        }
+        
+        .footer-links svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor; /* 'color' özelliğini miras alır */
         }
 
-            .footer-links a {
-                color: var(--apple-gray);
-                font-weight: 500;
-            }
+        .footer-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
     </style>
 </head>
 <body>
 
     <nav class="main-nav">
         <div class="nav-container">
-            <a href="#" class="nav-brand">[Your Name]</a>
+            <a href="#" class="nav-brand">[Adınız Soyadınız]</a>
             <ul class="nav-links">
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="mailto:your-email@example.com">Contact</a></li>
+                <li><a href="#projects">Projeler</a></li>
+                <li><a href="#about">Hakkımda</a></li>
+                <li><a href="mailto:email@adresiniz.com">İletişim</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
 
-        <header class="hero container">
-            <h1>Hello. I'm [Your Name].</h1>
-            <p class="subtitle">I design and build things for the web and mobile.</p>
-            <a href="#projects" class="cta-link">See my work &rarr;</a>
+        <header class="hero">
+            <div class="container">
+                <h1>Merhaba, ben [Adınız].</h1>
+                <p class="subtitle">Unity, Blender ve Python ile sürükleyici deneyimler<br>ve akıllı çözümler geliştiren bir yazılımcıyım.</p>
+                <a href="#projects" class="cta-button">Projelerimi Gör</a>
+                <a href="mailto:email@adresiniz.com" class="cta-button secondary">Bana Ulaşın</a>
+            </div>
         </header>
 
         <section id="projects" class="projects">
             <div class="container">
-                <h2>My Projects</h2>
+                <h2>Öne Çıkan Projeler</h2>
                 <div class="project-grid">
 
                     <div class="project-card">
-                        <img src="https://via.placeholder.com/800x450/f5f5f7/1d1d1f?text=Project+Image" alt="Project 1 Screenshot">
+                        <img src="https://via.placeholder.com/800x450/1c1c1e/ffffff?text=Steam+Oyun+Görseli" alt="Proje 1 Ekran Görüntüsü">
                         <div class="project-content">
-                            <h3>Project Title One</h3>
-                            <p>A brief, compelling description of your project, what it does, and what technologies you used (e.g., Unity, Blender, etc.).</p>
-                            <a href="#">View Case Study &rarr;</a>
+                            <h3>[Steam Oyun Adı]</h3>
+                            <div class="project-tags">
+                                <span class="tag">Unity</span>
+                                <span class="tag">3D Modelleme</span>
+                                <span class="tag">Shader</span>
+                                <span class="tag">Steamworks</span>
+                            </div>
+                            <p>Steam'de yayınlanmak üzere geliştirilen, [oyunun kısa açıklaması, örn: fizik tabanlı bir bulmaca oyunu].</p>
+                            <a href="#">Steam'de İncele &rarr;</a>
                         </div>
                     </div>
 
                     <div class="project-card">
-                        <img src="https://via.placeholder.com/800x450/f5f5f7/1d1d1f?text=Project+Image" alt="Project 2 Screenshot">
+                        <img src="https://via.placeholder.com/800x450/1c1c1e/ffffff?text=VR+Proje+Görseli" alt="Proje 2 Ekran Görüntüsü">
                         <div class="project-content">
-                            <h3>Project Title Two</h3>
-                            <p>A brief, compelling description of your project, what it does, and what technologies you used (e.g., Python, Scikit-learn, etc.).</p>
-                            <a href="#">View on GitHub &rarr;</a>
+                            <h3>[VR Proje Adı]</h3>
+                             <div class="project-tags">
+                                <span class="tag">Unity</span>
+                                <span class="tag">VR</span>
+                                <span class="tag">Blender</span>
+                                <span class="tag">C#</span>
+                            </div>
+                            <p>Tamamen sürükleyici bir sanal gerçeklik deneyimi. [Projenin amacı veya özelliği, örn: Magma shader efektleri kullanıldı].</p>
+                            <a href="#">GitHub'da Gör &rarr;</a>
                         </div>
                     </div>
-
+                    
                     <div class="project-card">
-                        <img src="https://via.placeholder.com/800x450/f5f5f7/1d1d1f?text=Project+Image" alt="Project 3 Screenshot">
+                        <img src="https://via.placeholder.com/800x450/1c1c1e/ffffff?text=Data+Science+Görseli" alt="Proje 3 Ekran Görüntüsü">
                         <div class="project-content">
-                            <h3>Project Title Three</h3>
-                            <p>A brief, compelling description of your project. This one could be about your VR development work, for example.</p>
-                            <a href="#">Play on Steam &rarr;</a>
+                            <h3>Veri Madenciliği Analizi</h3>
+                             <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Scikit-learn</span>
+                                <span class="tag">Numpy</span>
+                                <span class="tag">Matplotlib</span>
+                            </div>
+                            <p>Dengesiz (imbalanced) bir veri seti üzerinde sınıflandırma ve analiz. [Kullanılan teknik veya sonuç].</p>
+                            <a href="#">Raporu Oku &rarr;</a>
                         </div>
                     </div>
 
@@ -262,25 +383,32 @@
         </section>
 
         <section id="about" class="about container">
-            <h2>About Me</h2>
-            <p style="color: var(--apple-black); font-size: 1.25rem; font-weight: 500;">
-                I'm a passionate developer with experience in 3D modeling, game development, and data science.
+            <h2>Hakkımda</h2>
+            <p class="lead">
+                Oyun geliştirmeden veri bilimine uzanan geniş bir yelpazede yenilikçi projeler üretmeyi seviyorum.
             </p>
             <p>
-                From creating immersive VR experiences in Unity to building shaders and analyzing data with Python, I love tackling complex challenges. My work is currently published on mobile app stores and I'm expanding to new platforms.
-            </p>
+                Unity ve Blender kullanarak 3D modeller, karakterler (ışık ampulü kötü adam gibi!) ve özel shader'lar oluşturmaktan keyif alıyorum. Aynı zamanda Python'un gücünü kullanarak veri analizi yapıyor ve makine öğrenmesi modelleri geliştiriyorum. Hem mobil marketlerde hem de Steam gibi platformlarda oyun yayınlama tecrübem bulunuyor.
+            </İ>
         </section>
 
     </main>
 
     <footer>
         <div class="container footer-content">
-            <ul class="footer-links">
-                <li><a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a></li>
-                <li><a href="https://github.com/your-username" target="_blank">GitHub</a></li>
-                <li><a href="https://your-twitter-handle" target="_blank">Twitter / X</a></li>
+             <ul class="footer-links">
+                <li>
+                    <a href="https://www.linkedin.com/in/profiliniz" target="_blank" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/kullanici-adiniz" target="_blank" title="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.034c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.109-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                </li>
             </ul>
-            <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+            <p>&copy; 2025 [Adınız Soyadınız]. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 
