@@ -61,6 +61,11 @@
             text-align: center;
             margin-bottom: 3rem;
         }
+        
+        h2.section-heading { /* Bölüm başlıkları için özel stil */
+            color: var(--text-dark);
+            margin-bottom: 3rem;
+        }
 
         h3 {
             font-size: 1.5rem; /* 24px */
@@ -262,9 +267,57 @@
             border-radius: 99px;
         }
 
-        /* --- 6. Hakkımda Bölümü --- */
+        /* --- 6. Yetenekler Bölümü (Yeni Eklendi) --- */
+        .skills-section {
+            background-color: #ffffff; /* Açık arkaplan */
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .skills-section h2 {
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap; /* Küçük ekranlarda alta geçmesini sağlar */
+            justify-content: center;
+            gap: 2.5rem; /* İkonlar arası boşluk */
+            margin-top: 3rem;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            width: 100px; /* Her bir ikon için sabit genişlik */
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .skill-item svg {
+            width: 60px; /* İkon boyutu */
+            height: 60px;
+            fill: var(--text-dark); /* İkon rengi */
+            transition: fill 0.2s ease, transform 0.2s ease;
+        }
+
+        .skill-item:hover svg {
+            fill: var(--primary-color); /* Hoverda ana renge dönüş */
+            transform: translateY(-5px);
+        }
+        
+        .skill-item:hover span {
+            color: var(--primary-color);
+        }
+
+        /* --- 7. Hakkımda Bölümü --- */
         .about {
-            background: #ffffff;
+            background: var(--bg-light); /* Arkaplan rengini değiştirdim */
             padding: 5rem 0;
             max-width: 760px; /* Okunabilirlik için dar */
             margin: 0 auto;
@@ -282,7 +335,7 @@
             margin-bottom: 1.5rem;
         }
 
-        /* --- 7. Footer --- */
+        /* --- 8. Footer --- */
         footer {
             padding: 4rem 0;
             text-align: center;
@@ -329,7 +382,7 @@
             <a href="#" class="nav-brand">Berat Taş</a>
             <ul class="nav-links">
                 <li><a href="#projects">Projeler</a></li>
-                <li><a href="#about">Hakkımda</a></li>
+                <li><a href="#skills">Yetenekler</a></li> <li><a href="#about">Hakkımda</a></li>
                 <li><a href="mailto:email@adresiniz.com">İletişim</a></li>
             </ul>
         </div>
@@ -339,7 +392,7 @@
 
         <header class="hero">
             <div class="container">
-                <img src=img/profile.jpeg alt="Berat Taş Profil Fotoğrafı" class="profile-picture">
+                <img src="https://via.placeholder.com/120/007aff/ffffff?text=BT" alt="Berat Taş Profil Fotoğrafı" class="profile-picture">
                 <h1>Merhaba, ben Berat.</h1>
                 <p class="subtitle">Unity, Blender ve Python ile sürükleyici deneyimler<br>ve akıllı çözümler geliştiren bir yazılımcıyım.</p>
                 <a href="#projects" class="cta-button">Projelerimi Gör</a>
@@ -349,7 +402,7 @@
 
         <section id="projects" class="projects">
             <div class="container">
-                <h2>Öne Çıkan Projeler</h2>
+                <h2 class="section-heading">Öne Çıkan Projeler</h2>
                 <div class="project-grid">
 
                     <div class="project-card">
@@ -401,6 +454,39 @@
             </div>
         </section>
 
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2 class="section-heading">Yeteneklerim</h2>
+                <div class="skills-grid">
+                    
+                    <div class="skill-item">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0L0 5.8V18.2L12 24L24 18.2V5.8L12 0ZM12 2.6L20.2 6.8L12 11L3.8 6.8L12 2.6ZM2 7.6L10.2 11.8L10.2 21.4L2 17.2V7.6ZM13.8 11.8L22 7.6V17.2L13.8 21.4V11.8Z"/></svg>
+                        <span>Unity</span>
+                    </div>
+
+                    <div class="skill-item">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3.178 7.378h3.351l-.527 2.195-2.003-.001-.207 2.052 1.932.002-.527 2.193-2.932-.001.693-2.906h-2.181l-.694-2.906h2.181l.527-2.193zm1.611-3.378h-.002c-.001.002-.002.004-.002.007l-.271 2.871h-.001c-.115-1.04-.492-2.878-.291-3.529.231-.74 1.258-1.503 2.686-1.503h.001c1.326 0 2.228.694 2.228 1.517 0 .617-.456 1.402-1.066 1.961l-.608.571-1.353-.195c-.394-.055-.718-.088-1.109-.088-.41 0-.821.037-1.189.103zm-.81 1.745c-.092.36-.201.761-.318 1.151h.001c.214-.72.637-1.127 1.076-1.127.42 0 .684.186.852.474.221.385.297.949.198 1.638-.13.882-.416 1.65-.675 2.186-.312.656-.632 1.322-.97 1.989h-.002l-.527 2.193 1.932.002.207-2.052 2.003.001.527-2.195-3.351-.001.81-3.378z"/></svg>
+                        <span>C#</span>
+                    </div>
+
+                    <div class="skill-item">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 3c4.962 0 9 4.038 9 9s-4.038 9-9 9-9-4.038-9-9 4.038-9 9-9zM11 7l5 5-5 5V7z"/></svg>
+                        <span>Unreal Engine</span>
+                    </div>
+
+                    <div class="skill-item">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.2c5.344 0 9.7 4.156 9.7 9.8 0 5.644-4.356 9.8-9.7 9.8-5.344 0-9.7-4.156-9.7-9.8 0-5.644 4.356-9.8 9.7-9.8zm-1.879 4.295l-3.082 3.082c-.417.417-.61.942-.562 1.464l.117 1.258c.074.793.43 1.493.987 2.05L12 19.344l3.719-3.719c.557-.557.913-1.257.987-2.05l.117-1.258c.048-.522-.145-1.047-.562-1.464l-3.082-3.082c-.63-.63-1.65-.63-2.28 0zm1.879 1.879c.148 0 .28.056.386.162l3.082 3.082c.106.106.162.238.162.386 0 .148-.056.28-.162.386l-3.082 3.082c-.106.106-.238.162-.386.162-.148 0-.28-.056-.386-.162l-3.082-3.082c-.106-.106-.162-.238-.162-.386 0-.148.056-.28.162-.386l3.082-3.082c.106-.106.238-.162.386-.162z"/></svg>
+                        <span>Blender</span>
+                    </div>
+
+                    <div class="skill-item">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 12.5C14.5 13.3284 13.8284 14 13 14H11C10.1716 14 9.5 13.3284 9.5 12.5V8.5C9.5 7.67157 10.1716 7 11 7H13C13.8284 7 14.5 7.67157 14.5 8.5V12.5ZM12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0ZM12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM8 16C8 16.5523 8.44772 17 9 17H15C15.5523 17 16 16.5523 16 16V14.5C16 13.9477 15.5523 13.5 15 13.5H9C8.44772 13.5 8 13.9477 8 14.5V16Z"/></svg>
+                        <span>Firebase</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
         <section id="about" class="about container">
             <h2>Hakkımda</h2>
             <p class="lead">
@@ -422,7 +508,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://github.com/berattas5834" target="_blank" title="GitHub">
+                    <a href="https://github.com/kullanici-adiniz" target="_blank" title="GitHub">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.034c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.109-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     </a>
                 </li>
@@ -433,6 +519,3 @@
 
 </body>
 </html>
-
-
-
