@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     
     <style>
-        /* --- 1. Global Stiller ve Renk Paleti --- */
+        /* --- 1. Global Stiller --- */
         :root {
             --primary-color: #007aff;
             --primary-hover: #0056b3;
@@ -28,9 +28,7 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -48,50 +46,14 @@
         }
 
         /* --- 2. Tipografi --- */
-        h1, h2, h3, h4 {
-            font-weight: 600;
-            line-height: 1.2;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            letter-spacing: -0.02em;
-            margin-top: 1.5rem;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        h2.section-heading {
-            color: var(--text-dark);
-            margin-bottom: 3rem;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-        }
-
-        p {
-            font-size: 1.0625rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        a:hover {
-            color: var(--primary-hover);
-            text-decoration: none;
-        }
+        h1, h2, h3, h4 { font-weight: 600; line-height: 1.2; }
+        h1 { font-size: 3.5rem; letter-spacing: -0.02em; margin-top: 1.5rem; }
+        h2 { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; }
+        h2.section-heading { color: var(--text-dark); margin-bottom: 3rem; }
+        h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-dark); }
+        p { font-size: 1.0625rem; color: var(--text-secondary); margin-bottom: 1rem; }
+        a { color: var(--primary-color); text-decoration: none; font-weight: 500; }
+        a:hover { color: var(--primary-hover); text-decoration: none; }
 
         /* --- 3. Navigasyon Barı --- */
         .main-nav {
@@ -115,13 +77,8 @@
             padding: 0 20px;
         }
 
-        .nav-brand {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
+        .nav-brand { font-size: 1.25rem; font-weight: 600; color: var(--text-dark); }
         
-        /* Navigasyonun sağ tarafı (Linkler + Dil Butonu) için grup */
         .nav-right-group {
             display: flex;
             align-items: center;
@@ -141,28 +98,35 @@
             transition: color 0.2s ease;
         }
         
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
+        .nav-links a:hover { color: var(--primary-color); }
         
-        /* YENİ EKLENDİ: Dil Değiştirme Butonu Stili */
+        /* GÜNCELLENDİ: Dil Değiştirme Butonu Stili */
         .lang-toggle {
             background: var(--bg-light);
             border: 1px solid var(--border-color);
-            color: var(--text-secondary);
             padding: 6px 14px;
             border-radius: 99px;
             font-size: 0.85rem;
-            font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.2s, color 0.2s;
+            transition: background-color 0.2s;
         }
         
         .lang-toggle:hover {
-            background: var(--text-dark);
-            color: var(--text-light);
+            background-color: #e5e5e7; /* Biraz daha koyu gri */
         }
-
+        
+        /* Buton içindeki span'lar için stil */
+        .lang-toggle span {
+            color: var(--text-secondary); /* Aktif olmayan dil rengi */
+            font-weight: 500;
+            transition: color 0.2s, font-weight 0.2s;
+        }
+        
+        /* Aktif olan dil için stil */
+        .lang-toggle span.active {
+            color: var(--text-dark); /* Aktif dil rengi */
+            font-weight: 700; /* Daha kalın */
+        }
         /* --- 4. Hero (Karşılama) Alanı --- */
         .hero {
             background-color: var(--bg-dark);
@@ -172,9 +136,7 @@
             border-bottom: 1px solid #333;
         }
 
-        .hero h1 {
-            color: var(--text-light);
-        }
+        .hero h1 { color: var(--text-light); }
 
         .hero .subtitle {
             font-size: 1.75rem;
@@ -195,9 +157,7 @@
             transition: transform 0.3s ease;
         }
 
-        .profile-picture:hover {
-            transform: scale(1.05);
-        }
+        .profile-picture:hover { transform: scale(1.05); }
 
         .cta-button {
             display: inline-block;
@@ -223,9 +183,7 @@
             margin-left: 1rem;
         }
         
-        .cta-button.secondary:hover {
-             background: rgba(255,255,255, 0.2);
-        }
+        .cta-button.secondary:hover { background: rgba(255,255,255, 0.2); }
 
         /* --- 5. Projeler Bölümü --- */
         .projects {
@@ -299,10 +257,7 @@
             text-align: center;
         }
 
-        .skills-section h2 {
-            margin-bottom: 2rem;
-            color: var(--text-dark);
-        }
+        .skills-section h2 { margin-bottom: 2rem; color: var(--text-dark); }
 
         .skills-grid {
             display: flex;
@@ -336,9 +291,7 @@
             transform: translateY(-5px);
         }
         
-        .skill-item:hover span {
-            color: var(--primary-color);
-        }
+        .skill-item:hover span { color: var(--primary-color); }
 
         /* --- 7. Hakkımda Bölümü --- */
         .about {
@@ -349,9 +302,7 @@
             text-align: center;
         }
         
-        .about h2 {
-            margin-bottom: 1.5rem;
-        }
+        .about h2 { margin-bottom: 1.5rem; }
 
         .about p.lead {
             color: var(--text-dark);
@@ -387,16 +338,8 @@
             transform: scale(1.1);
         }
         
-        .footer-links svg {
-            width: 24px;
-            height: 24px;
-            fill: currentColor;
-        }
-
-        .footer-content p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
+        .footer-links svg { width: 24px; height: 24px; fill: currentColor; }
+        .footer-content p { color: var(--text-secondary); font-size: 0.9rem; }
 
     </style>
 </head>
@@ -413,7 +356,9 @@
                     <li><a href="#about" data-key="nav_about">Hakkımda</a></li>
                     <li><a href="mailto:email@adresiniz.com" data-key="nav_contact">İletişim</a></li>
                 </ul>
-                <button id="lang-toggle-btn" class="lang-toggle">EN</button>
+                <button id="lang-toggle-btn" class="lang-toggle">
+                    <span id="lang-tr">TR</span> / <span id="lang-en">EN</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -608,7 +553,8 @@
 
         // 2. Gerekli elementleri ve mevcut dili seç
         const langToggleButton = document.getElementById('lang-toggle-btn');
-        // Tarayıcı hafızasından kayıtlı dili al, yoksa 'tr' (Türkçe) olarak başlat
+        const langTrSpan = document.getElementById('lang-tr');
+        const langEnSpan = document.getElementById('lang-en');
         let currentLang = localStorage.getItem('lang') || 'tr';
 
         // 3. Dili ayarlayacak ana fonksiyon
@@ -622,8 +568,15 @@
                 }
             });
             
-            // Butonun metnini güncelle (Eğer dil TR ise EN butonunu, EN ise TR butonunu göster)
-            langToggleButton.textContent = lang === 'tr' ? 'EN' : 'TR';
+            // GÜNCELLENDİ: Buton metni yerine 'active' sınıfını yönet
+            if (lang === 'tr') {
+                langTrSpan.classList.add('active');
+                langEnSpan.classList.remove('active');
+            } else {
+                langTrSpan.classList.remove('active');
+                langEnSpan.classList.add('active');
+            }
+            
             // Sayfanın 'lang' niteliğini güncelle (SEO ve erişilebilirlik için)
             document.documentElement.lang = lang;
             // Seçilen dili hafızaya kaydet
