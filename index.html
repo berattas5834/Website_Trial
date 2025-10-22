@@ -356,13 +356,14 @@
                     <li><a href="mailto:email@adresiniz.com" data-key="nav_contact">İletişim</a></li>
                 </ul>
                 <button id="lang-toggle-btn" class="lang-toggle">
-                    <span id="lang-tr">TR</span> / <span id="log-en">EN</span>
+                    <span id="lang-tr">TR</span> / <span id="lang-en">EN</span>
                 </button>
             </div>
         </div>
     </nav>
 
     <main>
+
         <header class="hero">
             <div class="container">
                 <img src="https://media.licdn.com/dms/image/v2/D4D03AQFLUM26FQ0l6A/profile-displayphoto-scale_400_400/B4DZoHo1qBGQAg-/0/1761064740203?e=1762992000&v=beta&t=kh8DkSdBW4iBypXRMTLvHVAJLyWOxKYt32g9iKJEeqU" alt="Berat Taş Profil Fotoğrafı" class="profile-picture">
@@ -379,16 +380,16 @@
                 <div class="project-grid">
                     
                     <div class="project-card">
-                        <img src="https://via.placeholder.com/800x450/1c1c1e/ffffff?text=Steam+Oyun+Görseli" alt="Proje 1 Ekran Görüntüsü">
+                        <img src="https://via.placeholder.com/800x450/1c1c1e/ffffff?text=Bunch+3D" alt="Bunch 3D Ekran Görüntüsü">
                         <div class="project-content">
-                            <h3 data-key="project1_title">[Steam Oyun Adı]</h3>
+                            <h3 data-key="project1_title">Bunch 3D</h3>
                             <div class="project-tags">
                                 <span class="tag">Unity</span>
+                                <span class="tag">iOS</span>
                                 <span class="tag">3D Modelleme</span>
-                                <span class="tag">Shader</span>
                             </div>
-                            <p data-key="project1_desc">Steam'de yayınlanmak üzere geliştirilen, [oyunun kısa açıklaması].</p>
-                            <a href="#" data-key="project1_link">Steam'de İncele &rarr;</a>
+                            <p data-key="project1_desc">Hız ve stratejinin anahtar olduğu, hızlı tempolu bir 3D bulmaca macerası. Nesneleri toplayın, engellerden kaçın ve liderlik tablosuna tırmanın.</p>
+                            <a href="https://apps.apple.com/us/app/bunch-3d/id6651823378" target="_blank" data-key="project1_link">App Store'da İncele &rarr;</a>
                         </div>
                     </div>
                     
@@ -507,9 +508,9 @@
                 hero_cta_main: "Projelerimi Gör",
                 hero_cta_secondary: "Bana Ulaşın",
                 projects_title: "Öne Çıkan Projeler",
-                project1_title: "[Steam Oyun Adı]",
-                project1_desc: "Steam'de yayınlanmak üzere geliştirilen, [oyunun kısa açıklaması].",
-                project1_link: "Steam'de İncele &rarr;",
+                project1_title: "Bunch 3D",
+                project1_desc: "Hız ve stratejinin anahtar olduğu, hızlı tempolu bir 3D bulmaca macerası. Nesneleri toplayın, engellerden kaçın ve liderlik tablosuna tırmanın.",
+                project1_link: "App Store'da İncele &rarr;",
                 project2_title: "[VR Proje Adı]",
                 project2_desc: "Tamamen sürükleyici bir sanal gerçeklik deneyimi. [Projenin amacı veya özelliği].",
                 project2_link: "GitHub'da Gör &rarr;",
@@ -532,9 +533,9 @@
                 hero_cta_main: "See My Work",
                 hero_cta_secondary: "Contact Me",
                 projects_title: "Featured Projects",
-                project1_title: "[Steam Game Name]",
-                project1_desc: "A [short game description] developed for publication on Steam.",
-                project1_link: "View on Steam &rarr;",
+                project1_title: "Bunch 3D",
+                project1_desc: "A fast-paced 3D puzzle adventure where speed and strategy are key. Collect objects, dodge obstacles, and climb the leaderboard.",
+                project1_link: "View on App Store &rarr;",
                 project2_title: "[VR Project Name]",
                 project2_desc: "A fully immersive virtual reality experience. [Project's purpose or feature].",
                 project2_link: "View on GitHub &rarr;",
@@ -552,7 +553,7 @@
         // 2. Gerekli elementleri ve mevcut dili seç
         const langToggleButton = document.getElementById('lang-toggle-btn');
         const langTrSpan = document.getElementById('lang-tr');
-        const langEnSpan = document.getElementById('lang-en'); // DİKKAT: Önceki kodda burada 'log-en' yazıyordu, 'lang-en' olarak düzelttim.
+        const langEnSpan = document.getElementById('lang-en');
         let currentLang = localStorage.getItem('lang') || 'tr';
 
         // 3. Dili ayarlayacak ana fonksiyon
