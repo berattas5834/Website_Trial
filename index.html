@@ -1,12 +1,16 @@
-Tamamdır, ikinci projeyi de "Throw Master" olarak güncelledim.
+Elbette, "Bunch 3D" kartına Google Play Store linkini de ekledim.
 
-İstediğin görseli, Meta Quest Store linkini ve bu projeye özel (Türkçe ve İngilizce) açıklamaları hem HTML'e hem de JavaScript'teki `translations` objesine ekledim.
+Bunu düzgün göstermek için:
 
-İşte sitenin en güncel `index.html` dosyası:
+1.  Proje kartlarının link alanı için `.project-links` adında yeni bir CSS stili ekledim. Bu, birden fazla linkin düzgün görünmesini sağlar.
+2.  "Proje Kartı 1"in (Bunch 3D) HTML'ini bu yeni yapıyı kullanacak şekilde güncelledim.
+3.  JavaScript `translations` objesine yeni Google Play linkinin metinlerini (TR ve EN) ekledim.
+
+İşte sitenin en güncel `index.html` hali:
 
 -----
 
-## Berat Taş - Portfolyo HTML (Proje 2 Güncellendi)
+## Berat Taş - Portfolyo HTML (Çift Link Eklendi)
 
 ```html
 <!DOCTYPE html>
@@ -241,7 +245,7 @@ Tamamdır, ikinci projeyi de "Throw Master" olarak güncelledim.
         .project-content p {
             font-size: 1rem;
             margin-bottom: 1.5rem;
-            flex-grow: 1;
+            flex-grow: 1; /* Paragrafın büyümesini ve linkleri en alta itmesini sağlar */
         }
 
         .project-tags {
@@ -258,6 +262,13 @@ Tamamdır, ikinci projeyi de "Throw Master" olarak güncelledim.
             font-weight: 500;
             padding: 4px 10px;
             border-radius: 99px;
+        }
+        
+        /* YENİ EKLENDİ: Proje Linkleri Wrapper */
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 1.5rem; /* Satır ve sütun boşlukları */
         }
 
         /* --- 6. Yetenekler Bölümü --- */
@@ -397,10 +408,13 @@ Tamamdır, ikinci projeyi de "Throw Master" olarak güncelledim.
                             <div class="project-tags">
                                 <span class="tag">Unity</span>
                                 <span class="tag">iOS</span>
-                                <span class="tag">3D Modelleme</span>
+                                <span class="tag">Android</span>
                             </div>
                             <p data-key="project1_desc">Hız ve stratejinin anahtar olduğu, hızlı tempolu bir 3D bulmaca macerası. Nesneleri toplayın, engellerden kaçın ve liderlik tablosuna tırmanın.</p>
-                            <a href="https://apps.apple.com/us/app/bunch-3d/id6651823378" target="_blank" data-key="project1_link">App Store'da İncele &rarr;</a>
+                            <div class="project-links">
+                                <a href="https://apps.apple.com/us/app/bunch-3d/id6651823378" target="_blank" data-key="project1_link_appstore">App Store'da İncele &rarr;</a>
+                                <a href="https://play.google.com/store/apps/details?id=com.mbrsoftware.matchn&hl=tr" target="_blank" data-key="project1_link_googleplay">Google Play'de İncele &rarr;</a>
+                            </div>
                         </div>
                     </div>
                     
@@ -414,7 +428,9 @@ Tamamdır, ikinci projeyi de "Throw Master" olarak güncelledim.
                                 <span class="tag">Meta Quest</span>
                             </div>
                             <p data-key="project2_desc">Becerilerinizi test eden, bağımlılık yapıcı bir VR arcade oyunu. Çeşitli nesneleri fırlatın, hedefleri vurun ve en yüksek skora ulaşın.</p>
-                            <a href="https://www.meta.com/tr-tr/experiences/throw-master/24337675112595406/" target="_blank" data-key="project2_link">Meta Store'da İncele &rarr;</a>
+                            <div class="project-links">
+                                <a href="https://www.meta.com/tr-tr/experiences/throw-master/24337675112595406/" target="_blank" data-key="project2_link">Meta Store'da İncele &rarr;</a>
+                            </div>
                         </div>
                     </div>
                     
@@ -428,7 +444,9 @@ Tamamdır, ikinci projeyi de "Throw Master" olarak güncelledim.
                                 <span class="tag">Numpy</span>
                             </div>
                             <p data-key="project3_desc">Dengesiz (imbalanced) bir veri seti üzerinde sınıflandırma ve analiz.</p>
-                            <a href="#" data-key="project3_link">Raporu Oku &rarr;</a>
+                            <div class="project-links">
+                                <a href="#" data-key="project3_link">Raporu Oku &rarr;</a>
+                            </div>
                         </div>
                     </div>
                     
@@ -521,7 +539,8 @@ Tamamdır, ikinci projeyi de "Throw Master" olarak güncelledim.
                 projects_title: "Öne Çıkan Projeler",
                 project1_title: "Bunch 3D",
                 project1_desc: "Hız ve stratejinin anahtar olduğu, hızlı tempolu bir 3D bulmaca macerası. Nesneleri toplayın, engellerden kaçın ve liderlik tablosuna tırmanın.",
-                project1_link: "App Store'da İncele &rarr;",
+                project1_link_appstore: "App Store'da İncele &rarr;",
+                project1_link_googleplay: "Google Play'de İncele &rarr;",
                 project2_title: "Throw Master",
                 project2_desc: "Becerilerinizi test eden, bağımlılık yapıcı bir VR arcade oyunu. Çeşitli nesneleri fırlatın, hedefleri vurun ve en yüksek skora ulaşın.",
                 project2_link: "Meta Store'da İncele &rarr;",
@@ -546,7 +565,8 @@ Tamamdır, ikinci projeyi de "Throw Master" olarak güncelledim.
                 projects_title: "Featured Projects",
                 project1_title: "Bunch 3D",
                 project1_desc: "A fast-paced 3D puzzle adventure where speed and strategy are key. Collect objects, dodge obstacles, and climb the leaderboard.",
-                project1_link: "View on App Store &rarr;",
+                project1_link_appstore: "View on App Store &rarr;",
+                project1_link_googleplay: "View on Google Play &rarr;",
                 project2_title: "Throw Master",
                 project2_desc: "An addictive VR arcade game that tests your skills. Throw various objects, hit targets, and achieve the highest score.",
                 project2_link: "View on Meta Store &rarr;",
