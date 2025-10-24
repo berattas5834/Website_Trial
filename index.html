@@ -230,7 +230,7 @@
         .project-content p {
             font-size: 1rem;
             margin-bottom: 1.5rem;
-            flex-grow: 1; /* Paragrafın büyümesini ve linkleri en alta itmesini sağlar */
+            flex-grow: 1;
         }
 
         .project-tags {
@@ -252,7 +252,7 @@
         .project-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem 1.5rem; /* Satır ve sütun boşlukları */
+            gap: 1rem 1.5rem;
         }
 
         /* --- 6. Yetenekler Bölümü --- */
@@ -287,8 +287,7 @@
         
         .skill-item i {
             font-size: 60px;
-            color: var(--text-dark);
-            transition: color 0.2s ease, transform 0.2s ease;
+            transition: transform 0.2s ease;
         }
         
         .skill-item img {
@@ -301,11 +300,10 @@
         .skill-item:hover i, .skill-item:hover img {
             transform: translateY(-5px);
         }
-        .skill-item:hover i {
-             color: var(--primary-color);
-        }
         
-        .skill-item:hover span { color: var(--primary-color); }
+        .skill-item:hover span { 
+            color: var(--primary-color); 
+        }
 
         /* --- 7. Hakkımda Bölümü --- */
         .about {
@@ -452,56 +450,56 @@
         <section id="skills" class="skills-section">
             <div class="container">
                 <h2 class="section-heading" data-key="skills_title">Yeteneklerim</h2>
+                <!-- GÜNCELLENDİ: Tüm ikonlar renkli hale getirildi ve 3D Printing logosu değiştirildi -->
                 <div class="skills-grid">
                     
                     <div class="skill-item">
-                        <i class="devicon-unity-original"></i>
+                        <i class="devicon-unity-original colored"></i>
                         <span>Unity</span>
                     </div>
 
                     <div class="skill-item">
-                        <i class="devicon-csharp-plain"></i>
+                        <i class="devicon-csharp-plain colored"></i>
                         <span>C#</span>
                     </div>
 
                     <div class="skill-item">
-                        <i class="devicon-unrealengine-original"></i>
+                        <i class="devicon-unrealengine-original colored"></i>
                         <span>Unreal Engine</span>
                     </div>
 
                     <div class="skill-item">
-                        <i class="devicon-blender-original"></i>
+                        <i class="devicon-blender-original colored"></i>
                         <span>Blender</span>
                     </div>
 
                     <div class="skill-item">
-                        <i class="devicon-firebase-plain"></i>
+                        <i class="devicon-firebase-plain colored"></i>
                         <span>Firebase</span>
                     </div>
                     
-                    <!-- GÜNCELLENDİ: Python ikonu belirtilen URL ile değiştirildi -->
                     <div class="skill-item">
                         <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png" alt="Python Logo">
                         <span>Python</span>
                     </div>
                     
                     <div class="skill-item">
-                        <i class="devicon-cplusplus-plain"></i>
+                        <i class="devicon-cplusplus-plain colored"></i>
                         <span>C++</span>
                     </div>
 
                     <div class="skill-item">
-                        <i class="devicon-flutter-plain"></i>
+                        <i class="devicon-flutter-plain colored"></i>
                         <span>Flutter</span>
                     </div>
                     
                     <div class="skill-item">
-                        <i class="devicon-swift-plain"></i>
+                        <i class="devicon-swift-plain colored"></i>
                         <span>Swift</span>
                     </div>
                     
                     <div class="skill-item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/3d-printer.svg" alt="3D Printing Icon">
+                        <img src="data:image/png;base64,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" alt="3D Printing Icon">
                         <span>3D Printing</span>
                     </div>
 
