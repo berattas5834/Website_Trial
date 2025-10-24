@@ -113,19 +113,73 @@
         }
         
         .lang-toggle:hover {
-            background-color: #e5e5e7; /* Biraz daha koyu gri */
+            background-color: #e5e5e7;
         }
         
         .lang-toggle span {
-            color: var(--text-secondary); /* Aktif olmayan dil rengi */
+            color: var(--text-secondary);
             font-weight: 500;
             transition: color 0.2s, font-weight 0.2s;
         }
         
         .lang-toggle span.active {
-            color: var(--text-dark); /* Aktif dil rengi */
-            font-weight: 700; /* Daha kalın */
+            color: var(--text-dark);
+            font-weight: 700;
         }
+
+        /* --- GÜNCELLENDİ: Hamburger Menü Stilleri Eklendi --- */
+        .hamburger-menu {
+            display: none; /* Masaüstünde gizli */
+            flex-direction: column;
+            justify-content: space-around;
+            width: 2rem;
+            height: 2rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 10;
+        }
+
+        .hamburger-menu span {
+            width: 2rem;
+            height: 3px;
+            background: var(--text-dark);
+            border-radius: 10px;
+            transition: all 0.3s linear;
+        }
+        
+        /* --- GÜNCELLENDİ: Mobil için Media Query --- */
+        @media (max-width: 768px) {
+            .nav-right-group {
+                display: none; /* Mobil menüyü başlangıçta gizle */
+                flex-direction: column;
+                gap: 1.5rem;
+                background: white;
+                position: absolute;
+                top: 65px; /* Navigasyon barının yüksekliği kadar */
+                left: 0;
+                width: 100%;
+                padding: 2rem 0;
+                text-align: center;
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            }
+
+            .nav-right-group.active {
+                display: flex; /* JavaScript ile açıldığında göster */
+            }
+
+            .nav-links {
+                flex-direction: column;
+            }
+
+            .hamburger-menu {
+                display: flex; /* Mobilde göster */
+            }
+        }
+
+
         /* --- 4. Hero (Karşılama) Alanı --- */
         .hero {
             background-color: var(--bg-dark);
@@ -361,6 +415,13 @@
         <div class="nav-container">
             <a href="#" class="nav-brand">Berat Taş</a>
             
+            <!-- GÜNCELLENDİ: Hamburger Menü butonu eklendi -->
+            <button class="hamburger-menu" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
             <div class="nav-right-group">
                 <ul class="nav-links">
                     <li><a href="#projects" data-key="nav_projects">Projeler</a></li>
@@ -498,7 +559,7 @@
                     </div>
                     
                     <div class="skill-item">
-                        <img src="data:image/png;base64,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" alt="3D Printing Icon">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAABcCAMAAADUMSJqAAAA1VBMVEUAAAD///+z2v5ra4JbW3JeXnYmJibU1NRSUmcbGyFcXHAFBQc4OEMeHiVSUmwlJTE/TVmoze9fX18pKTQmJi623v9wcIiIjY9qi1jA+5+79Jux55Ps+/+coaSXuNZnfpOJp8NRVFV6la05RlHm7/LI0NNqcXZBRkpFRVSTmJu64/8SEhfi9/+js8Da6PL09PSzs7Pl5eVKWmlWaXotMTeQnKYYGRk5Ozy/0ODM3u9ecobU3OCCjpguOEFyiqKxwdDAwcJUbkaYxn6NuHVzeIiOjp1qanZpzEb+AAAFsUlEQVRoge2ZaX+iSBCHC28OE0HQPYIHRiWg4zmaxEnGOXa//0fa6gNtCCiHebf/F/lFkMfuqurqKhqks5Y1KKzaUgCCwFaLswHUZRx8iXfkZkHJCFl+hNt4uX13d1ctpjZi7Ch8ydmVomoLY+fwFfpSuwW7UtXQq6sQvF4DmbGT5lu5cE/8TqXShFo9Cr+nbPc+3lMu3muYl71573LDxMOrblKEye+Os7kah271ArxiJj32WrI8PfFuIPPSyBsytHSvD9CzSpmlt0Bu/A/PAy/lg1te6Tq82VpvATa9rMN21q3mVXigjTgqS4/Iis5szVZDSjhsvBO73xpF1OqH6JYDqeDDwyNquSN254pdmRtLkPeOqfAwvA5/xI8PJAW/9gZUThNUXw5LhaYzOKuHvz9+vA6vGZNJ91Ea44blM+Hup1Wq5ZDc8+3gO2ngVDaBCyLwzkkMHlVq+BOBTydMQwbXXC6NwYcTQdN08OHhO4d3H4hms7mK8LKQEU0CV+ez2cNJTynhX8Yc/iTCqwK8eQN4bcq0BQb3mVV8NnLYTgXVssLDDjVBpntoRebwPA5NhvsNKv8m8O5n2Dw2Wqo3iZbdfsvhhv2VakLhitnmMhUKn3w9yzYEuAvDxdVFlHeFVn5zdtzI93vjEIWLbKJL8Lt/pCQ4ZkW0oXQEWDtMfR/8+3szJLzUdwStU8JpPh/vQR14LFnzXSaidSmSz48ns/y7SjRLsOJGp71Gj6Gv9ehOtJ/u0jkUNRKe9kjZsB9/ocJJtfSSVwpJH9GHKNxMDkV/+4a/MHL08MMIP7CQPlB4RFbv9W3rpyiKrLi6ZQPq0KAaqqHKIDSAfBWXNRANPogtmQqUc86Z7cQOvAjcQp9Nn5+n6OmEUq9IIUp8+vIS580bwEuvGMt70mN8Atzq0UUgJxbAhUZu9XCljJKL62LFv4fxOPBibtwCTjJIfIgXgfMPGIz+reGWPnjvE71BchymhVs9VWRQPwa61CulgpM2RWQTKK2Tt5uLfVhKuCgPd4o1L/E/dEK5Ri7CVfD5jnaJnBquOwPhGYC35NjODMdw9mkbyvZeHLnuid1V6XQvPJ8soajzfgtjZfsuNlfUKb3I52zwuC2fqYXzELaOUyGQHu45SWzY4y5tixccKysc/3TtWD2SGmAZfOoC9PPAD1IKHXLCJ90UmuSBJ9v8gzLb3Cq10rJbOeLc0jcA3+ZzXKGDGGH+nc+/AWxOlUamfE7q4u+zFxbYUXk4sZcZtk/vQW6wkuCLI4U3ED7q6VhDDMjrIPyR+cszKXhjhAv3+QWn1T9dwbwvk14Sq9zj4gw/7tJ7L512xwBevzkb6XUOxyaS9IHa7dRWsSGk8MUQO29s6ju3kyLT1oXAceDVSkUpf1BVuarqx6eIsN9m8BVAG+H0otJoKJ3gG0oa48aMqVzuaAArCrfZS3VyzcVa03eDbyS+qRflduLoLj1zQTj27ST2z023e4b/+OOifgRw4RfYvwAGhWPNjQOvMks9dXfgn+E//7yonxyuuMQ6Gvm/4RJSB/cUAicHLQyOPt4/SJhDRfhfFxTAOyrIHTJvhfhJ69BxYg4A8u7T5SNvYgd/GOaAaz4SFd9EyJb5zCVHUUCWEDc58fGuRl/WBPBff1/Ur8DmNGZYXCpBpD1JsDBwCVV4JDaJP5tK8WjBaYCxgNWWHcDwEGq33dO6SAePZZfLbdiuoE5e1Zzg4WFo5lVpCewymrgOSwaP/UKaNJLAJjZdQhdUDTP89SySUa6K6COA+ikCRC8madyWR5MFSAvbwATg00NH0wfgr1WyC1efyigY0TXDXrA9FJOuT4+fySuk4O1XdhmgNughtsZPitnuXwOVwhtkMrnhNj1qRrhPt4oAbnO7+OLBembhRq/y8/mhdIav9oEXpvkHLknn2BgLcInkQiIjv8VRiy4rUvZ8+v8B5+cy0EteXY4AAAAASUVORK5CYII=" alt="3DPrinting Icon">
                         <span>3D Printing</span>
                     </div>
 
@@ -539,7 +600,7 @@
 
 
     <script>
-        // 1. Tüm çevirileri burada sakla
+        // --- DİL DEĞİŞTİRME SCRİPT'İ ---
         const translations = {
             'tr': {
                 nav_projects: "Projeler",
@@ -563,7 +624,6 @@
                 project3_link: "App Store'da İncele &rarr;",
                 skills_title: "Yeteneklerim",
                 about_title: "Hakkımda",
-                // GÜNCELLENDİ: Hakkımda metinleri
                 about_lead: "Tutkum, kod ve tasarımla interaktif dünyalar yaratmak ve oyunculara unutulmaz deneyimler sunmaktır.",
                 about_p: "Oyun geliştirme serüvenimin merkezinde Unity yer alıyor. Bu güçlü motoru kullanarak mobil (iOS/Android) ve VR (Meta Quest) platformları için optimize edilmiş, akıcı ve ilgi çekici oyunlar geliştiriyorum. C# ile temiz ve performanslı kod yazarken, Blender ile oyunlarıma hayat veren 3D modeller ve karakterler oluşturuyorum. Fikirden markete uzanan tüm sürece hakimim ve hem App Store & Google Play'de hem de Meta Store'da oyun yayınlama tecrübem bulunuyor. Amacım, her yeni projede teknik ve yaratıcı sınırlarımı zorlamaktır.",
                 footer_copyright: "&copy; 2025 Berat Taş. Tüm hakları saklıdır."
@@ -590,20 +650,17 @@
                 project3_link: "View on App Store &rarr;",
                 skills_title: "My Skills",
                 about_title: "About Me",
-                // GÜNCELLENDİ: Hakkımda metinleri (İngilizce)
                 about_lead: "My passion is creating interactive worlds with code and design, offering players unforgettable experiences.",
                 about_p: "Unity is at the core of my game development journey. Using this powerful engine, I develop optimized, fluid, and engaging games for mobile (iOS/Android) and VR (Meta Quest) platforms. I write clean, performant code in C# while bringing my games to life with 3D models and characters created in Blender. I am proficient in the entire process from concept to launch, with experience publishing on the App Store, Google Play, and the Meta Store. My goal is to push my technical and creative boundaries with every new project.",
                 footer_copyright: "&copy; 2025 Berat Taş. All rights reserved."
             }
         };
 
-        // 2. Gerekli elementleri ve mevcut dili seç
         const langToggleButton = document.getElementById('lang-toggle-btn');
         const langTrSpan = document.getElementById('lang-tr');
         const langEnSpan = document.getElementById('lang-en');
         let currentLang = localStorage.getItem('lang') || 'tr';
 
-        // 3. Dili ayarlayacak ana fonksiyon
         function setLanguage(lang) {
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.dataset.key;
@@ -624,14 +681,22 @@
             localStorage.setItem('lang', lang);
         }
 
-        // 4. Butona tıklama olayını dinle
         langToggleButton.addEventListener('click', () => {
             currentLang = currentLang === 'tr' ? 'en' : 'tr';
             setLanguage(currentLang);
         });
 
-        // 5. Sayfa ilk yüklendiğinde dili ayarla
         setLanguage(currentLang);
+    </script>
+
+    <!-- GÜNCELLENDİ: Hamburger Menü için yeni script -->
+    <script>
+        const hamburger = document.querySelector('.hamburger-menu');
+        const navMenu = document.querySelector('.nav-right-group');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
     </script>
 
 </body>
