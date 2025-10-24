@@ -127,9 +127,8 @@
             font-weight: 700;
         }
 
-        /* --- GÜNCELLENDİ: Hamburger Menü Stilleri Eklendi --- */
         .hamburger-menu {
-            display: none; /* Masaüstünde gizli */
+            display: none;
             flex-direction: column;
             justify-content: space-around;
             width: 2rem;
@@ -149,15 +148,14 @@
             transition: all 0.3s linear;
         }
         
-        /* --- GÜNCELLENDİ: Mobil için Media Query --- */
         @media (max-width: 768px) {
             .nav-right-group {
-                display: none; /* Mobil menüyü başlangıçta gizle */
+                display: none;
                 flex-direction: column;
                 gap: 1.5rem;
                 background: white;
                 position: absolute;
-                top: 65px; /* Navigasyon barının yüksekliği kadar */
+                top: 65px;
                 left: 0;
                 width: 100%;
                 padding: 2rem 0;
@@ -167,7 +165,7 @@
             }
 
             .nav-right-group.active {
-                display: flex; /* JavaScript ile açıldığında göster */
+                display: flex;
             }
 
             .nav-links {
@@ -175,7 +173,7 @@
             }
 
             .hamburger-menu {
-                display: flex; /* Mobilde göster */
+                display: flex;
             }
         }
 
@@ -415,7 +413,6 @@
         <div class="nav-container">
             <a href="#" class="nav-brand">Berat Taş</a>
             
-            <!-- GÜNCELLENDİ: Hamburger Menü butonu eklendi -->
             <button class="hamburger-menu" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
@@ -427,7 +424,8 @@
                     <li><a href="#projects" data-key="nav_projects">Projeler</a></li>
                     <li><a href="#skills" data-key="nav_skills">Yetenekler</a></li>
                     <li><a href="#about" data-key="nav_about">Hakkımda</a></li>
-                    <li><a href="mailto:email@adresiniz.com" data-key="nav_contact">İletişim</a></li>
+                    <!-- GÜNCELLENDİ: Email adresi değiştirildi -->
+                    <li><a href="mailto:berattas5834@gmail.com" data-key="nav_contact">İletişim</a></li>
                 </ul>
                 <button id="lang-toggle-btn" class="lang-toggle">
                     <span id="lang-tr">TR</span> / <span id="lang-en">EN</span>
@@ -444,7 +442,8 @@
                 <h1 data-key="hero_greeting">Merhaba, ben Berat.</h1>
                 <p class="subtitle" data-key="hero_subtitle">Unity, Blender ve Python ile sürükleyici deneyimler<br>ve akıllı çözümler geliştiren bir yazılımcıyım.</p>
                 <a href="#projects" class="cta-button" data-key="hero_cta_main">Projelerimi Gör</a>
-                <a href="mailto:email@adresiniz.com" class="cta-button secondary" data-key="hero_cta_secondary">Bana Ulaşın</a>
+                <!-- GÜNCELLENDİ: Email adresi değiştirildi -->
+                <a href="mailto:berattas5834@gmail.com" class="cta-button secondary" data-key="hero_cta_secondary">Bana Ulaşın</a>
             </div>
         </header>
 
@@ -689,7 +688,7 @@
         setLanguage(currentLang);
     </script>
 
-    <!-- GÜNCELLENDİ: Hamburger Menü için yeni script -->
+    <!-- HAMBURGER MENÜ SCRİPT'İ -->
     <script>
         const hamburger = document.querySelector('.hamburger-menu');
         const navMenu = document.querySelector('.nav-right-group');
