@@ -1,5 +1,3 @@
---- START OF FILE Yeni Metin Belgesi (3).txt ---
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -292,10 +290,19 @@
             color: var(--text-dark);
             transition: color 0.2s ease, transform 0.2s ease;
         }
+        
+        .skill-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            transition: transform 0.2s ease;
+        }
 
-        .skill-item:hover i {
-            color: var(--primary-color);
+        .skill-item:hover i, .skill-item:hover img {
             transform: translateY(-5px);
+        }
+        .skill-item:hover i {
+             color: var(--primary-color);
         }
         
         .skill-item:hover span { color: var(--primary-color); }
@@ -374,7 +381,8 @@
 
         <header class="hero">
             <div class="container">
-                <img src="https://media.licdn.com/dms/image/v2/D4D03AQFLUM26FQ0l6A/profile-displayphoto-scale_400_400/B4DZoHo1qBGQAg-/0/1761064740203?e=1762992000&v=beta&t=kh8DkSdBW4iBypXRMTLvHVAJLyWOyKYt32g9iKJEeqU" alt="Berat Taş Profil Fotoğrafı" class="profile-picture">
+                <!-- GÜNCELLENDİ: Profil resmi URL'si daha stabil bir kaynakla değiştirildi -->
+                <img src="https://ui-avatars.com/api/?name=Berat+Taş&background=007aff&color=fff&size=128" alt="Berat Taş Profil Fotoğrafı" class="profile-picture">
                 <h1 data-key="hero_greeting">Merhaba, ben Berat.</h1>
                 <p class="subtitle" data-key="hero_subtitle">Unity, Blender ve Python ile sürükleyici deneyimler<br>ve akıllı çözümler geliştiren bir yazılımcıyım.</p>
                 <a href="#projects" class="cta-button" data-key="hero_cta_main">Projelerimi Gör</a>
@@ -445,59 +453,58 @@
         <section id="skills" class="skills-section">
             <div class="container">
                 <h2 class="section-heading" data-key="skills_title">Yeteneklerim</h2>
+                <!-- GÜNCELLENDİ: Yeni yetenekler eklendi ve ikonlar düzeltildi -->
                 <div class="skills-grid">
                     
                     <div class="skill-item">
-                        <i class="devicon-unity-original"></i>
+                        <i class="devicon-unity-original colored"></i>
                         <span>Unity</span>
                     </div>
 
                     <div class="skill-item">
-                        <i class="devicon-csharp-plain"></i>
+                        <i class="devicon-csharp-plain colored"></i>
                         <span>C#</span>
                     </div>
 
                     <div class="skill-item">
-                        <i class="devicon-unrealengine-original"></i>
+                        <i class="devicon-unrealengine-original colored"></i>
                         <span>Unreal Engine</span>
                     </div>
 
                     <div class="skill-item">
-                        <i class="devicon-blender-original"></i>
+                        <i class="devicon-blender-original colored"></i>
                         <span>Blender</span>
                     </div>
 
                     <div class="skill-item">
-                        <i class="devicon-firebase-plain"></i>
+                        <i class="devicon-firebase-plain colored"></i>
                         <span>Firebase</span>
                     </div>
                     
                     <div class="skill-item">
-                        <i class="devicon-python-original"></i>
+                        <i class="devicon-python-original colored"></i>
                         <span>Python</span>
                     </div>
                     
-                    <!-- Kullanıcının isteği üzerine eklenen yeni yetenekler -->
                     <div class="skill-item">
-                        <i class="devicon-cplusplus-plain"></i>
+                        <i class="devicon-cplusplus-plain colored"></i>
                         <span>C++</span>
                     </div>
 
                     <div class="skill-item">
-                        <i class="devicon-flutter-plain"></i>
+                        <i class="devicon-flutter-plain colored"></i>
                         <span>Flutter</span>
                     </div>
                     
                     <div class="skill-item">
-                        <i class="devicon-swift-plain"></i>
+                        <i class="devicon-swift-plain colored"></i>
                         <span>Swift</span>
                     </div>
                     
                     <div class="skill-item">
-                        <i class="devicon-atom-original"></i> <!-- 3D Printing için Devicon'da uygun bir ikon bulunmadığından, genel bir teknoloji ikonu kullanılmıştır. -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/3d-printer.svg" alt="3D Printing Icon">
                         <span>3D Printing</span>
                     </div>
-                    <!-- Yeni yetenekler sonu -->
 
                 </div>
             </div>
